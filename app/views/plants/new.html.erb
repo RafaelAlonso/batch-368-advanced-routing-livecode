@@ -1,0 +1,12 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-4 col-offset-4">
+      <%= simple_form_for [@garden, @plant] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :image_url %>
+        <%= f.submit 'Create new Plant', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

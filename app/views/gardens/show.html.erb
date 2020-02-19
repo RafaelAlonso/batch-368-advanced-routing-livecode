@@ -4,8 +4,8 @@
   </div>
 </div>
 
-<div class="container mt-2">
-  <div class="cards">
+<div class="container">
+  <div class="cards my-2">
     <% @garden.plants.each do |plant| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.image_url %>)">
         <%= plant.name %>
@@ -14,11 +14,13 @@
   </div>
 
   <div class="row">
-    <div class="col-4 col-offset-4">
+    <div class="col-6 offset-3">
       <%= simple_form_for [@garden, @plant] do |f| %>
         <%= f.input :name %>
         <%= f.input :image_url %>
-        <%= f.submit 'Create new Plant', class: 'btn btn-primary' %>
+        <div class="text-center">
+          <%= f.submit 'Create new Plant', class: 'btn btn-primary' %>
+        </div>
       <% end %>
     </div>
   </div>
